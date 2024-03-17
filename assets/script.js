@@ -17,19 +17,39 @@ const slides = [
 	}
 ]
 
+let image = document.querySelector(".banner-img")
 
 let carrousel = document.getElementById("banner")
-console.log(carrousel)
 
 let gauche = document.querySelector("#banner .arrow_left")
-console.log(gauche)
+
 let droite = document.querySelector("#banner .arrow_right")
-console.log(droite)
+
+let currentIndex = 0 
+
+function afficherSlide (index) {
+	image.setAttribute("src", `/assets/images/slideshow/${slides[index].image}`);
+}
 
 gauche.addEventListener("click", (event) => {
-	console.log("J ai clique sur la gauche")
-})
+    if (currentIndex === 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = currentIndex - 1;
+    }
+    afficherSlide(currentIndex);
+});
 droite.addEventListener("click", (event) => {
-	console.log("J ai clique sur la droite")
-})
+    if (currentIndex === slides.length - 1) {
+        currentIndex = 0;
+    } else {
+        currentIndex = currentIndex + 1;
+    }
+    afficherSlide(currentIndex);
+});
+
+
+
+
+
 
