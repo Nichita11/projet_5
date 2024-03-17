@@ -27,15 +27,9 @@ let droite = document.querySelector("#banner .arrow_right")
 console.log(droite)
 
 gauche.addEventListener("click", (event) => {
-	console.log("J ai clque")
+	console.log("J ai clique sur la gauche")
 })
 droite.addEventListener("click", (event) => {
-	console.log("J ai clque")
+	console.log("J ai clique sur la droite")
 })
 
-let arrows = document.querySelectorAll(".arrow")
-
-for (let i = 0; i < arrows.length; i++) {
-	let clickedArrow = arrows[i]
-	console.log(clickedArrow)
-}
