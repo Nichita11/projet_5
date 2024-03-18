@@ -28,7 +28,6 @@ let currentIndex = 0;
 function afficherSlide(index) {
     image.setAttribute("src", `/assets/images/slideshow/${slides[index].image}`);
     
-    // Met à jour l'indice actuel du point blanc
     dots.forEach(dot => dot.classList.remove("dot_selected"));
     dots[index].classList.add("dot_selected");
 }
