@@ -17,36 +17,39 @@ const slides = [
 	}
 ]
 
-let image = document.querySelector(".banner-img")
+let image = document.querySelector(".banner-img");
+let carrousel = document.getElementById("banner");
+let gauche = document.querySelector("#banner .arrow_left");
+let droite = document.querySelector("#banner .arrow_right");
+let dots = document.querySelectorAll(".dot");
 
-let carrousel = document.getElementById("banner")
+let currentIndex = 0;
 
-let gauche = document.querySelector("#banner .arrow_left")
-
-let droite = document.querySelector("#banner .arrow_right")
-
-let currentIndex = 0 
-
-function afficherSlide (index) {
-	image.setAttribute("src", `/assets/images/slideshow/${slides[index].image}`);
+function afficherSlide(index) {
+    image.setAttribute("src", `/assets/images/slideshow/${slides[index].image}`);
+    
+    // Met à jour l'indice actuel du point blanc
+    dots.forEach(dot => dot.classList.remove("dot_selected"));
+    dots[index].classList.add("dot_selected");
 }
 
 gauche.addEventListener("click", (event) => {
     if (currentIndex === 0) {
         currentIndex = slides.length - 1;
     } else {
-        currentIndex = currentIndex - 1;
+        currentIndex--;
     }
     afficherSlide(currentIndex);
 });
+
 droite.addEventListener("click", (event) => {
     if (currentIndex === slides.length - 1) {
         currentIndex = 0;
     } else {
-        currentIndex = currentIndex + 1;
+        currentIndex++;
     }
     afficherSlide(currentIndex);
-});
+}); 
 
 
 
