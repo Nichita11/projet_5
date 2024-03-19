@@ -26,7 +26,7 @@ let dots = document.querySelectorAll(".dot");
 let currentIndex = 0;
 
 function afficherSlide(index) {
-    image.setAttribute("src", `/assets/images/slideshow/${slides[index].image}`);
+    image.setAttribute("src", `./assets/images/slideshow/${slides[index].image}`);
     
     dots.forEach(dot => dot.classList.remove("dot_selected"));
     dots[index].classList.add("dot_selected");
