@@ -18,7 +18,6 @@ const slides = [
 ]
 
 let image = document.querySelector(".banner-img");
-let carrousel = document.getElementById("banner");
 let gauche = document.querySelector("#banner .arrow_left");
 let droite = document.querySelector("#banner .arrow_right");
 let dots = document.querySelectorAll(".dot");
@@ -27,7 +26,8 @@ let currentIndex = 0;
 
 function afficherSlide(index) {
     image.setAttribute("src", `./assets/images/slideshow/${slides[index].image}`);
-    
+	document.querySelector("#banner p").innerHTML = slides[index].tagLine;
+
     dots.forEach(dot => dot.classList.remove("dot_selected"));
     dots[index].classList.add("dot_selected");
 }
