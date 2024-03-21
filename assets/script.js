@@ -30,7 +30,10 @@ function afficherSlide(index) {
 
     dots.forEach(dot => dot.classList.remove("dot_selected"));
     dots[index].classList.add("dot_selected");
+	
 }
+
+dots[0].classList.add("dot_selected");
 
 gauche.addEventListener("click", (event) => {
     if (currentIndex === 0) {
